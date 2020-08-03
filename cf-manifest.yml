@@ -1,0 +1,10 @@
+applications:
+- name: api-mirdc-authorizater_1.1
+  instances: 1
+  host: api-mirdc-authorizater
+  buildpack: https://github.com/cloudfoundry/go-buildpack.git
+  stack: cflinuxfs3
+  memory: 256M
+  disk_quota: 128M
+  env:
+    POSTGRES_URL: 'host=61.219.26.42 port=5432 user=postgres password=4ziw9jh70b3v0yydbk48 dbname=rabbitmq sslmode=disable'

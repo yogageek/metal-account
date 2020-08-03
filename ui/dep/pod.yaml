@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mirdc-authorizater-ui
+spec:
+  selector:
+    matchLabels:
+      run: mirdc-authorizater-ui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: mirdc-authorizater-ui
+    spec:
+      containers:
+      - name: mirdc-authorizater-ui
+        image: changekaid0ck3r/mirdc-authorizater-ui:sa
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128M
+            ephemeral-storage: 128M
+          limits:
+            cpu: 400m
+            memory: 512M
+            ephemeral-storage: 256M
+        ports:
+        - containerPort: 80
+          name: http

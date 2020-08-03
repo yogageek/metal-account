@@ -1,0 +1,8 @@
+k8s的話
+需要 nginx.conf封裝docker用
+kubectl apply -f pod.yaml -n mirdc
+kubectl apply -f service.yaml -n mirdc
+kubectl apply -f ingress.yaml -n mirdc
+
+cf的話
+需移除 nginx.conf，直接使用平台上buildpack

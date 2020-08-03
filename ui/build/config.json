@@ -1,0 +1,162 @@
+{
+  "name": "Account Authorizater",
+  "baseUrl": "https://mirdc-authorizater-api-svc-mirdc-eks005.sa.wise-paas.com",
+  "pages": [
+    {
+      "name": "Accounts",
+      "id": "accounts",
+      "description": "Services purchased by users",
+      "methods": {
+        "getAll": {
+          "label": "Get All",
+          "url": "/accounts",
+          "dataPath": null,
+          "queryParams": [
+            {
+              "name": "search",
+              "value": "",
+              "label": "Search"
+            }
+          ],
+          "display": {
+            "type": "table",
+            "fields": [
+              {
+                "name": "id",
+                "type": "integer",
+                "label": "ID",
+                "readonly": true
+              },
+              {
+                "name": "email",
+                "type": "text",
+                "label": "Email"
+              },
+              {
+                "name": "dashboard",
+                "type": "boolean",
+                "label": "Dashboard"
+              },
+              {
+                "name": "spc",
+                "type": "boolean",
+                "label": "SPC"
+              },
+              {
+                "name": "adjustment_guiding",
+                "type": "boolean",
+                "label": "Adjustment_Guiding"
+              },
+              {
+                "name": "parameter_failure_pediction",
+                "type": "boolean",
+                "label": "Parameter_Failure_Pediction"
+              },
+              {
+                "name": "process_status_analysis",
+                "type": "boolean",
+                "label": "Process_Status_Analysis"
+              },
+              {
+                "name": "company",
+                "type": "text",
+                "label": "Company"
+              }
+            ]
+          }
+        },
+        "getSingle": {
+          "url": "/account/:id",
+          "dataPath": null,
+          "queryParams": [],
+          "requestHeaders": {}
+        },
+        "put": {
+          "url": "/account/:id",
+          "actualMethod": null,
+          "includeOriginalFields": false,
+          "fields": [
+            {
+              "name": "email",
+              "type": "text",
+              "label": "Email"
+            },
+            {
+              "name": "dashboard",
+              "type": "boolean",
+              "label": "Dashboard"
+            },
+            {
+              "name": "spc",
+              "type": "boolean",
+              "label": "SPC"
+            },
+            {
+              "name": "adjustment_guiding",
+              "type": "boolean",
+              "label": "Adjustment_Guiding"
+            },
+            {
+              "name": "parameter_failure_pediction",
+              "type": "boolean",
+              "label": "Parameter_Failure_Pediction"
+            },
+            {
+              "name": "process_status_analysis",
+              "type": "boolean",
+              "label": "Process_Status_Analysis"
+            },
+            {
+              "name": "company",
+              "type": "text",
+              "label": "Company"
+            }
+          ]
+        },
+        "post": {
+          "url": "/account",
+          "fields": [
+            {
+              "name": "email",
+              "type": "text",
+              "label": "Email"
+            },
+            {
+              "name": "dashboard",
+              "type": "boolean",
+              "label": "Dashboard"
+            },
+            {
+              "name": "spc",
+              "type": "boolean",
+              "label": "SPC"
+            },
+            {
+              "name": "adjustment_guiding",
+              "type": "boolean",
+              "label": "Adjustment_Guiding"
+            },
+            {
+              "name": "parameter_failure_pediction",
+              "type": "boolean",
+              "label": "Parameter_Failure_Pediction"
+            },
+            {
+              "name": "process_status_analysis",
+              "type": "boolean",
+              "label": "Process_Status_Analysis"
+            },
+            {
+              "name": "company",
+              "type": "text",
+              "label": "Company"
+            }
+          ]
+        },
+        "delete": {
+          "url": "/account/:id"
+        }
+      }
+    }
+  ]
+}

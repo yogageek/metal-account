@@ -1,0 +1,8 @@
+applications:
+- name: portal-mirdc-authorizater
+  instances: 1
+  host: portal-mirdc-authorizater
+  buildpack: staticfile_buildpack
+  stack: cflinuxfs3
+  memory: 512M
+  disk_quota: 256M

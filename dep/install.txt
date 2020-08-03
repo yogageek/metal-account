@@ -1,0 +1,30 @@
+cf的話
+與docker不同,注意manifest要在程式的根目錄，再下
+cf push -f cf-manifest.yml
+
+
+k8s的話，先進dep資料夾，再下
+套用 pod 佈署
+kubectl apply -f pod.yaml -n mirdc
+配置 service
+kubectl apply -f service.yaml -n mirdc
+配置 ingress(讓外部ip指到80)
+kubectl apply -f ingress.yaml -n mirdc
+
+查詢其它服務配置
+kubectl get ing ui-ing -o yaml -n da
+
+取得路徑
+kubectl get ing -n mirdc
+
+登入docker
+docker login -u user -p pass
+
+登入cf
+cf login -a api.wise-paas.io -u admin -p PBsgTTYephrM61GzAk9ePNXP9X01iW --skip-ssl-validation
+
+
+----
+先再sa部nodeport
+再掛ingress (yaml配置)
+才能去指到80

@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mirdc-authorizater-api-ing
+spec:
+  rules:
+  - host: mirdc-authorizater-api-svc.mirdc.eks005.en.internal
+    http:
+      paths:
+      - backend:
+          serviceName: mirdc-authorizater-api-svc
+          servicePort: 8080
+        path: /

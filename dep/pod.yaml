@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mirdc-authorizater-api
+spec:
+  selector:
+    matchLabels:
+      run: mirdc-authorizater-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: mirdc-authorizater-api
+    spec:
+      containers:
+      - name: mirdc-authorizater-api
+        image: yogageek/mirdc-authorizater-api:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128M
+            ephemeral-storage: 128M
+          limits:
+            cpu: 400m
+            memory: 512M
+            ephemeral-storage: 256M
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: POSTGRES_URL
+          value: "host=61.219.26.42 port=5432 user=postgres password=4ziw9jh70b3v0yydbk48 dbname=rabbitmq sslmode=disable"
